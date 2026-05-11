@@ -92,8 +92,9 @@
   db.ref("/sensor").on("value", snap => {
     const d = snap.val();
     if (!d) return;
-    const dry = 3200, wet = 1200;
+   const dry = 2800, wet = 1200;
     const pct = Math.max(0, Math.min(100, Math.round((d.soil - dry) / (wet - dry) * 100)));
+    document.getElementById("soil").textContent = pct + "%";
     document.getElementById("soil").textContent = pct + "%";
     document.getElementById("temp").textContent = (d.temperature ?? "--") + "°C";
     document.getElementById("humidity").textContent = (d.humidity ?? "--") + "%";
