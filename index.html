@@ -92,15 +92,17 @@
   db.ref("/sensor").on("value", snap => {
     const d = snap.val();
     if (!d) return;
-    document.getElementById("soil").textContent = d.soil ?? "--";
+    const dry = 3200, wet = 1200;
+    const pct = Math.max(0, Math.min(100, Math.round((d.soil - dry) / (wet - dry) * 100)));
+    document.getElementById("soil").textContent = pct + "%";
     document.getElementById("temp").textContent = (d.temperature ?? "--") + "°C";
     document.getElementById("humidity").textContent = (d.humidity ?? "--") + "%";
     document.getElementById("rain").textContent = (d.rain ?? "--") + "%";
     document.getElementById("status").textContent = "Online";
 
     const soilBadge = document.getElementById("soil-badge");
-    if (d.soil > 2450) { soilBadge.textContent = "DRY"; soilBadge.className = "badge dry"; }
-    else if (d.soil > 1550) { soilBadge.textContent = "MEDIUM"; soilBadge.className = "badge"; soilBadge.style.background="#FAEEDA"; soilBadge.style.color="#854F0B"; }
+    if (pct < 30) { soilBadge.textContent = "DRY"; soilBadge.className = "badge dry"; }
+    else if (pct < 60) { soilBadge.textContent = "MEDIUM"; soilBadge.className = "badge"; soilBadge.style.background="#FAEEDA"; soilBadge.style.color="#854F0B"; }
     else { soilBadge.textContent = "MOIST"; soilBadge.className = "badge moist"; }
   });
 
