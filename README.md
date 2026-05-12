@@ -101,5 +101,23 @@ All sensor data and system status are displayed in real time on:
 
 ---
 
+## Project Images
+
+### Final Hardware Setup
+![Setup 1](setup1.jpeg)
+
+### Complete Irrigation Setup
+![Setup 2](setup2.jpeg)
+
+### Blynk Mobile Dashboard
+![Blynk](blynk.jpeg)
+
+### Serial Monitor Output
+![Serial](serial.jpeg)
+
+### Plant Monitoring
+![Plant](plant.jpeg)
+
+---
 ## Author
 Sourabh
