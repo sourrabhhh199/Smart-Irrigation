@@ -1,6 +1,6 @@
-#define BLYNK_TEMPLATE_ID "TMPL3gaMXTXim"
+#define BLYNK_TEMPLATE_ID "XXXXXXXXXXXX"
 #define BLYNK_TEMPLATE_NAME "Smart irrigation"
-#define BLYNK_AUTH_TOKEN "UM3vD44YlrmbwXUl4OdUQhAYR70G2De7"
+#define BLYNK_AUTH_TOKEN "XXXXXXXXXXXXXXXXXXXXX"
 
 #include <WiFi.h> 
 #include <HTTPClient.h>  
@@ -32,13 +32,13 @@ FirebaseAuth auth;
 FirebaseConfig config;
 String lastAction = "NONE";
 
-const char* ssid = "Lemon";
-const char* password = "hehehehe";
+const char* ssid = "WIFI NAME**";
+const char* password = "WIFI PASSWORD**";
 
-#define API_KEY "AIzaSyAwr5hB5kwuO-oKIn5EGgbX-INXHF5rEUY"
-#define DATABASE_URL "https://smart-irrigation-system-c10ea-default-rtdb.asia-southeast1.firebasedatabase.app/"
-#define USER_EMAIL "tanwar199225@gmail.com"   
-#define USER_PASSWORD "Sourabh@199" 
+#define API_KEY "firbase api key here***"
+#define DATABASE_URL "https:// firebase database url here***"
+#define USER_EMAIL "MAIL"   
+#define USER_PASSWORD "PASSWORD" 
 
 int getCurrentHour() {
   struct tm timeinfo;
